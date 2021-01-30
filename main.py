@@ -19,6 +19,7 @@ counter = 0
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
@@ -29,36 +30,19 @@ class SplashScreen(QtWidgets.QMainWindow):
         QtWidgets.QMainWindow.__init__(self)
         self.ui = Ui_SplashScreen()
         self.ui.setupUi(self)
-
-        # UI ==> INTERFACE CODES
-        ########################################################################
         # REMOVE TITLE BAR
-        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-
-        # # DROP SHADOW EFFECT
-        # self.shadow = QGraphicsDropShadowEffect(self)
-        # self.shadow.setBlurRadius(20)
-        # self.shadow.setXOffset(0)
-        # self.shadow.setYOffset(0)
-        # self.shadow.setColor(QColor(0, 0, 0, 60))
-        # self.ui.dropShadowFrame.setGraphicsEffect(self.shadow)
-
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)  # change to remove titlebar
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)  # change the background
         # QTIMER ==> START
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.progress)
         # TIMER IN MILLISECONDS
-        self.timer.start(35)
-
-        # CHANGE DESCRIPTION
-
-        # Initial Text
-        self.ui.label_description.setText("<strong>WELCOME</strong> TO MY APPLICATION")
-
+        self.timer.start(30)
+        # CHANGE DESCRIPTION: Initial Text
+        self.ui.label_description.setText("<strong>IGVC</strong> 2021")
         # Change Texts
-        QtCore.QTimer.singleShot(1500, lambda: self.ui.label_description.setText("<strong>LOADING</strong> DATABASE"))
-        QtCore.QTimer.singleShot(3000, lambda: self.ui.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
-
+        QtCore.QTimer.singleShot(1500, lambda: self.ui.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
+        QtCore.QTimer.singleShot(3000, lambda: self.ui.label_description.setText("<strong>LOADING</strong>  DATABASE"))
         # SHOW ==> MAIN WINDOW
         ########################################################################
         self.show()

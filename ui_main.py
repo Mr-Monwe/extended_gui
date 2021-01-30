@@ -5,7 +5,9 @@
 # Created by: PyQt5 UI code generator 5.10.1
 #
 # WARNING! All changes made in this file will be lost!
-
+import time
+import subprocess
+from os import system
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -73,6 +75,54 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        # On button click execute selected dropdown item
+        self.select.clicked.connect(self.change_dropdown)
+
+    # Logic for dropdown menu & executables(ex. launch a file or terminate GUI)
+    def change_dropdown(self):
+        text = str(self.dropdown.currentText())
+        if text == 'Main Competition':
+            # TODO: Fix Main Comp launch pipeline
+            # subprocess.Popen(["gnome-terminal", "--", "roscore"])
+            time.sleep(1.0)
+            subprocess.Popen(
+                ["roslaunch", "differential_drive", "veronica_drive_manual.launch"])
+            print("Main Competition")
+        elif text == 'Lane Mode':
+            # TODO: Fix lane launch pipeline
+            subprocess.Popen(["roslaunch", "lane_follower",
+                              "lane_follower_bag.launch"])
+            print("Lane Mode")
+        elif text == 'Speed Mode':
+            # TODO: Fix Speed launch pipeline
+            # subprocess.Popen(["roslaunch", "lane_follower","lane_follower_bag.launch"])
+            print("Speed Mode")
+        elif text == 'Obstacle Mode':
+            # TODO: Fix Obstacle launch pipeline
+            # subprocess.Popen(["roslaunch", "lane_follower","lane_follower_bag.launch"])
+            print("Obstacle Mode")
+        elif text == 'Waypoint Mode':
+            # TODO: Fix Waypoint launch pipeline
+            # subprocess.Popen(["roslaunch", "lane_follower","lane_follower_bag.launch"])
+            print("Waypoint Mode")
+        elif text == 'Init Param Server':
+            # TODO: Fix Param launch pipeline
+            # subprocess.Popen(["roslaunch", "lane_follower","lane_follower_bag.launch"])
+            print("Init Param Server")
+        elif text == 'Status Check':
+            # TODO: Fix Status launch pipeline
+            # subprocess.Popen(["roslaunch", "lane_follower","lane_follower_bag.launch"])
+            print("Status Check")
+        elif text == 'Kill All':
+            # TODO: Test master kill
+            time.sleep(1.0)
+            subprocess.Popen(["killall -9 rosmaster"])
+            # system("killall -9 rosmaster")
+            time.sleep(0.5)
+            print("All Nodes Down!")
+            sys.exit()
+        else:
+            pass
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
