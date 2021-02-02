@@ -72,16 +72,16 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         # On button click execute selected dropdown item
         self.select.clicked.connect(self.change_dropdown)
+        subprocess.Popen(["gnome-terminal", "--", "roscore"])
 
     # Logic for dropdown menu & executables(ex. launch a file or terminate GUI)
     def change_dropdown(self):
         text = str(self.dropdown.currentText())
         if text == 'Main Competition':
             # TODO: Fix Main Comp launch pipeline
-            # subprocess.Popen(["gnome-terminal", "--", "roscore"])
-            time.sleep(1.0)
             subprocess.Popen(
                 ["roslaunch", "differential_drive", "veronica_drive_manual.launch"])
+            time.sleep(1.0)
             print("Main Competition")
         elif text == 'Lane Mode':
             # TODO: Fix lane launch pipeline
@@ -110,11 +110,8 @@ class Ui_MainWindow(object):
             print("Status Check")
         elif text == 'Kill All':
             # TODO: Test master kill
+            system("killall -9 rosmaster")
             time.sleep(1.0)
-            subprocess.Popen(["killall -9 rosmaster"])
-            subprocess.Popen(["killall -9 roscore"])
-            sys("killall -9 rosmaster")
-            time.sleep(0.5)
             print("All Nodes Down!")
             sys.exit()
         else:
@@ -131,6 +128,6 @@ class Ui_MainWindow(object):
         self.dropdown.setItemText(4, _translate("MainWindow", "Waypoint Mode"))
         self.dropdown.setItemText(5, _translate("MainWindow", "Init Param Server"))
         self.dropdown.setItemText(6, _translate("MainWindow", "Status Check"))
-        self.dropdown.setItemText(7, _translate("MainWindow", "Kill All "))
+        self.dropdown.setItemText(7, _translate("MainWindow", "Kill All"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p>SELECT &amp; LAUNCH A <span style=\" font-weight:600;\">MODE!</span></p></body></html>"))
         self.select.setText(_translate("MainWindow", "Select"))

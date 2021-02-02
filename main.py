@@ -30,23 +30,23 @@ class SplashScreen(QtWidgets.QMainWindow):
         QtWidgets.QMainWindow.__init__(self)
         self.ui = Ui_SplashScreen()
         self.ui.setupUi(self)
-        # QTIMER ==> START
+        # TIMER ==> START
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.progress)
         # TIMER IN MILLISECONDS
-        self.timer.start(30)
+        self.timer.start(32)
         # CHANGE DESCRIPTION: Initial Text
         self.ui.label_description.setText("<strong>IGVC</strong> 2021")
         # Change Texts
         QtCore.QTimer.singleShot(1500, lambda: self.ui.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
-        QtCore.QTimer.singleShot(3000, lambda: self.ui.label_description.setText("<strong>LOADING</strong>  DATABASE"))
+        QtCore.QTimer.singleShot(2000, lambda: self.ui.label_description.setText("<strong>LOADING</strong>  PACKAGES"))
+        QtCore.QTimer.singleShot(2900, lambda: self.ui.label_description.setText("<strong>LOADING</strong>  WORKSPACE"))
+        QtCore.QTimer.singleShot(3200, lambda: self.ui.label_description.setText("<strong>DONE</strong> "))
         # SHOW ==> MAIN WINDOW
-        ########################################################################
         self.show()
         ## ==> END ##
 
     # ==> APP FUNCTIONS
-    ########################################################################
     def progress(self):
         global counter
         # SET VALUE TO PROGRESS BAR
