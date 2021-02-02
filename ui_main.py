@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(797, 503)
-        MainWindow.setStyleSheet("background-color:none;")
+        MainWindow.setStyleSheet("background-color : rgb(0, 89, 79);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -26,10 +26,9 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.frame.setFont(font)
         self.frame.setStyleSheet("QFrame{\n"
-                                 "    background-color : rgb(92, 53, 102);\n"
-                                 "    color : rgb(220, 220, 220);\n"
-                                 "    border-radius: 10px;\n"
-                                 "}")
+"    background-color : rgb(0, 89, 79);\n"
+"    color : rgb(220, 220, 220); \n"
+"}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -40,8 +39,8 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.dropdown.setFont(font)
         self.dropdown.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.dropdown.setStyleSheet("background-color: rgb(98, 114, 164);\n"
-                                    "color: rgb(238, 238, 236); ")
+        self.dropdown.setStyleSheet("background-color: rgb(141, 144, 147);\n"
+"color: rgb(238, 238, 236); ")
         self.dropdown.setObjectName("dropdown")
         self.dropdown.addItem("")
         self.dropdown.addItem("")
@@ -57,8 +56,8 @@ class Ui_MainWindow(object):
         font.setFamily("Noto Sans CJK SC")
         font.setPointSize(26)
         self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(254, 121, 199);\n"
-                                 "")
+        self.label.setStyleSheet("color: rgb(255, 200, 68);\n"
+"")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.select = QtWidgets.QPushButton(self.frame)
@@ -67,8 +66,8 @@ class Ui_MainWindow(object):
         font.setFamily("Serif")
         font.setPointSize(11)
         self.select.setFont(font)
-        self.select.setStyleSheet("background-color: rgb(98, 114, 164);\n"
-                                  "color: rgb(238, 238, 236); ")
+        self.select.setStyleSheet("background-color: rgb(141, 144, 147);\n"
+"color: rgb(238, 238, 236); ")
         self.select.setObjectName("select")
         self.verticalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -136,5 +135,6 @@ class Ui_MainWindow(object):
         self.dropdown.setItemText(5, _translate("MainWindow", "Init Param Server"))
         self.dropdown.setItemText(6, _translate("MainWindow", "Status Check"))
         self.dropdown.setItemText(7, _translate("MainWindow", "Kill All "))
-        self.label.setText(_translate("MainWindow", "SELECT & LAUNCH A <strong>MODE</strong>"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p>SELECT &amp; LAUNCH A <span style=\" font-weight:600;\">MODE!</span></p></body></html>"))
         self.select.setText(_translate("MainWindow", "Select"))
+

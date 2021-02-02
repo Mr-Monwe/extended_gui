@@ -31,8 +31,8 @@ class SplashScreen(QtWidgets.QMainWindow):
         self.ui = Ui_SplashScreen()
         self.ui.setupUi(self)
         # REMOVE TITLE BAR
-        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)  # change to remove titlebar
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)  # change the background
+        # self.setWindowFlags(QtCore.Qt.FramelessWindowHint)  # change to remove titlebar
+        # self.setAttribute(QtCore.Qt.WA_TranslucentBackground)  # change the background
         # QTIMER ==> START
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.progress)

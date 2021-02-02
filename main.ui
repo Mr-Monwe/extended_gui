@@ -14,7 +14,7 @@
    <string>WSU Robotics Command Center</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:none;</string>
+   <string notr="true">background-color : rgb(0, 89, 79);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -28,9 +28,8 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QFrame{
-	background-color : rgb(92, 53, 102);
-	color : rgb(220, 220, 220);
-	border-radius: 10px;
+	background-color : rgb(0, 89, 79);
+	color : rgb(220, 220, 220); 
 }</string>
       </property>
       <property name="frameShape">
@@ -58,7 +57,7 @@
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(98, 114, 164);
+        <string notr="true">background-color: rgb(141, 144, 147);
 color: rgb(238, 238, 236); </string>
        </property>
        <property name="currentText">
@@ -121,11 +120,11 @@ color: rgb(238, 238, 236); </string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(254, 121, 199);
+        <string notr="true">color: rgb(255, 200, 68);
 </string>
        </property>
        <property name="text">
-        <string>SELECT &amp; LAUNCH A &lt;strong&gt;MODE&lt;/strong&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SELECT &amp;amp; LAUNCH A &lt;span style=&quot; font-weight:600;&quot;&gt;MODE!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -147,7 +146,7 @@ color: rgb(238, 238, 236); </string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(98, 114, 164);
+        <string notr="true">background-color: rgb(141, 144, 147);
 color: rgb(238, 238, 236); </string>
        </property>
        <property name="text">
