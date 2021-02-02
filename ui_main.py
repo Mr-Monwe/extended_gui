@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
+# python script for GUI {main UI}
 
-# Form implementation generated from reading ui file 'main.ui'
-#
-# Created by: PyQt5 UI code generator 5.10.1
-#
-# WARNING! All changes made in this file will be lost!
+import sys
 import time
 import subprocess
 from os import system
@@ -26,9 +22,9 @@ class Ui_MainWindow(object):
         font.setPointSize(12)
         self.frame.setFont(font)
         self.frame.setStyleSheet("QFrame{\n"
-"    background-color : rgb(0, 89, 79);\n"
-"    color : rgb(220, 220, 220); \n"
-"}")
+                                 "    background-color : rgb(0, 89, 79);\n"
+                                 "    color : rgb(220, 220, 220); \n"
+                                 "}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -40,7 +36,7 @@ class Ui_MainWindow(object):
         self.dropdown.setFont(font)
         self.dropdown.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.dropdown.setStyleSheet("background-color: rgb(141, 144, 147);\n"
-"color: rgb(238, 238, 236); ")
+                                    "color: rgb(238, 238, 236); ")
         self.dropdown.setObjectName("dropdown")
         self.dropdown.addItem("")
         self.dropdown.addItem("")
@@ -57,7 +53,7 @@ class Ui_MainWindow(object):
         font.setPointSize(26)
         self.label.setFont(font)
         self.label.setStyleSheet("color: rgb(255, 200, 68);\n"
-"")
+                                 "")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.select = QtWidgets.QPushButton(self.frame)
@@ -67,7 +63,7 @@ class Ui_MainWindow(object):
         font.setPointSize(11)
         self.select.setFont(font)
         self.select.setStyleSheet("background-color: rgb(141, 144, 147);\n"
-"color: rgb(238, 238, 236); ")
+                                  "color: rgb(238, 238, 236); ")
         self.select.setObjectName("select")
         self.verticalLayout.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -116,7 +112,8 @@ class Ui_MainWindow(object):
             # TODO: Test master kill
             time.sleep(1.0)
             subprocess.Popen(["killall -9 rosmaster"])
-            # system("killall -9 rosmaster")
+            subprocess.Popen(["killall -9 roscore"])
+            sys("killall -9 rosmaster")
             time.sleep(0.5)
             print("All Nodes Down!")
             sys.exit()
@@ -137,4 +134,3 @@ class Ui_MainWindow(object):
         self.dropdown.setItemText(7, _translate("MainWindow", "Kill All "))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p>SELECT &amp; LAUNCH A <span style=\" font-weight:600;\">MODE!</span></p></body></html>"))
         self.select.setText(_translate("MainWindow", "Select"))
-

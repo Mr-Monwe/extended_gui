@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'splash_screen.ui'
-#
-# Created by: PyQt5 UI code generator 5.10.1
-#
-# WARNING! All changes made in this file will be lost!
+# python script for GUI {splash screen UI}
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_SplashScreen(object):
     def setupUi(self, SplashScreen):
@@ -21,9 +16,9 @@ class Ui_SplashScreen(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.dropShadowFrame = QtWidgets.QFrame(self.centralwidget)
         self.dropShadowFrame.setStyleSheet("QFrame{\n"
-"    background-color : rgb(0, 89, 79);\n"
-"    color : rgb(220, 220, 220); \n"
-"}")
+                                           "    background-color : rgb(0, 89, 79);\n"
+                                           "    color : rgb(220, 220, 220); \n"
+                                           "}")
         self.dropShadowFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.dropShadowFrame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.dropShadowFrame.setObjectName("dropShadowFrame")
@@ -48,17 +43,17 @@ class Ui_SplashScreen(object):
         self.progressBar = QtWidgets.QProgressBar(self.dropShadowFrame)
         self.progressBar.setGeometry(QtCore.QRect(30, 200, 561, 23))
         self.progressBar.setStyleSheet("QProgressBar{\n"
-"    background-color : rgb(141, 144, 147);\n"
-"    color: rgb(255, 255, 255);\n"
-"    border-style: none;\n"
-"    border-radius: 10px;\n"
-"    text-align: center;\n"
-"}\n"
-"\n"
-"QProgressBar::chunk{\n"
-"    border-radius: 10px;\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.54, stop:0 rgba(255, 200, 68, 255), stop:1 rgba(180, 252, 124, 255));\n"
-"}")
+                                       "    background-color : rgb(141, 144, 147);\n"
+                                       "    color: rgb(255, 255, 255);\n"
+                                       "    border-style: none;\n"
+                                       "    border-radius: 10px;\n"
+                                       "    text-align: center;\n"
+                                       "}\n"
+                                       "\n"
+                                       "QProgressBar::chunk{\n"
+                                       "    border-radius: 10px;\n"
+                                       "    background-color: qlineargradient(spread:pad, x1:0, y1:0.511, x2:1, y2:0.54, stop:0 rgba(255, 200, 68, 255), stop:1 rgba(180, 252, 124, 255));\n"
+                                       "}")
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
         self.label_loading = QtWidgets.QLabel(self.dropShadowFrame)
@@ -77,7 +72,7 @@ class Ui_SplashScreen(object):
         font.setPointSize(10)
         self.label_credits.setFont(font)
         self.label_credits.setStyleSheet("color: rgb(255, 200, 68);")
-        self.label_credits.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_credits.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.label_credits.setObjectName("label_credits")
         self.verticalLayout.addWidget(self.dropShadowFrame)
         SplashScreen.setCentralWidget(self.centralwidget)
@@ -92,4 +87,3 @@ class Ui_SplashScreen(object):
         self.label_description.setText(_translate("SplashScreen", "<strong>IGVC</strong> 2021 "))
         self.label_loading.setText(_translate("SplashScreen", "loading...."))
         self.label_credits.setText(_translate("SplashScreen", "<strong>By:</strong>Warrior Robotics"))
-
