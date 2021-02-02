@@ -7,11 +7,11 @@ import subprocess
 from os import system
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-# ==> SPLASH SCREEN
+# SPLASH SCREEN
 from ui_splash_screen import Ui_SplashScreen
-# ==> MAIN WINDOW
+# MAIN WINDOW
 from ui_main import Ui_MainWindow
-# ==> GLOBALS
+# GLOBALS
 counter = 0
 
 
@@ -46,7 +46,7 @@ class SplashScreen(QtWidgets.QMainWindow):
         self.show()
         ## ==> END ##
 
-    # ==> APP FUNCTIONS
+    # APP FUNCTIONS
     def progress(self):
         global counter
         # SET VALUE TO PROGRESS BAR
